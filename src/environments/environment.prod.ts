@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+
+  newEpisodies: 'https://sato-anime-scraper.herokuapp.com/animes/new_episodies'
 };

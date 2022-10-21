@@ -1,0 +1,26 @@
+:host {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-color: var(--color-background-dark);
+    position: relative;
+
+    .menu {
+        position: absolute;
+        width: calc(100vw - 3rem);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        transform: translate(-50%, 0);
+        bottom: 0.5rem;
+        left: 50%;
+        background-color: var(--color-primary);
+        padding: 1rem 1.5rem;
+        border-radius: 1.5rem;
+
+        &-item {
+            color: var(--color-background-light);
+            text-decoration: none;
+        }
+    }
+}

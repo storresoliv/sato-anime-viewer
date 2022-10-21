@@ -1,0 +1,9 @@
+<h1 class="new-episodies-title">News episodies</h1>
+
+<ul class="new-episodies-list" *ngIf="newEpisodies">
+    <li class="episode" *ngFor="let episode of newEpisodies">
+        <img class="episode-image" [src]="episode.imageUrl" alt="episode-image-preview" referrerpolicy="no-referrer">
+        <p class="episode-title">{{episode.title}}</p>
+        <p class="episode-subtitle">episode {{episode.episode}}</p>
+    </li>
+</ul>
