@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
 
-  newEpisodies: 'http://localhost:3000/animes/new_episodies'
+  newEpisodies: 'http://localhost:3000/animes/new_episodies',
+  episodeLink: 'http://localhost:3000/animes/'
 };
 
 /*

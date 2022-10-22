@@ -1,0 +1,4 @@
+<a class="home-link material-icons-outlined" routerLink="/home" routerLinkActive="active">arrow_back</a>
+<ng-container *ngIf="playerLink">
+    <iframe [src]="playerLink" class="player" frameborder="0"></iframe>
+</ng-container>

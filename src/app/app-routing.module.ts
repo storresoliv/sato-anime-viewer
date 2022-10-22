@@ -5,6 +5,7 @@ import { APP_ROUTES } from './app.routes';
 import { HomeComponent } from './views/home/home.component';
 import { FavoriteComponent } from './views/favorite/favorite.component';
 import { SettingsComponent } from './views/settings/settings.component';
+import { PlayerComponent } from './views/player/player.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: APP_ROUTES.SETTINGS,
     component: SettingsComponent
+  },
+  {
+    path: APP_ROUTES.PLAYER,
+    component: PlayerComponent
   },
 ];
 

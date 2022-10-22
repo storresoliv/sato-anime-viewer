@@ -140,3 +140,7 @@ export const NEW_EPISODIES_MOCK = [
         "link": "https://www3.animeflv.net/ver/mobile-suit-gundam-the-witch-from-mercury-3"
     }
 ]
+
+export const EPISODE_LINK_MOCK = {
+    link: "https://www3.animeflv.net/uploads/animes/thumbs/3708.jpg"
+}

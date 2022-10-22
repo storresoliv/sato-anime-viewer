@@ -1,5 +1,6 @@
 export enum APP_ROUTES {
     HOME = 'home',
     FAVORITE = 'favorite',
-    SETTINGS = 'settings'
+    SETTINGS = 'settings',
+    PLAYER = 'player'
 }

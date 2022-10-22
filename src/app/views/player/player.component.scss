@@ -1,0 +1,24 @@
+:host {
+    display: block;
+    position: relative;
+
+    .home-link {
+        position: absolute;
+        top: var(--padding);
+        left: var(--padding);
+        text-decoration: none;
+        border-radius: calc(var(--border-radius) / 2);
+        background-color: var(--color-secondary);
+        padding: calc(var(--padding) / 4);
+        color: var(--color-primary);
+
+        &.active {
+            font-family: 'Material Icons';
+        }
+    }
+
+    .player {
+        width: 100vw;
+        height: 45vh;
+    }
+}
