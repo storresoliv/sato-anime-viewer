@@ -13,7 +13,10 @@ export class ScraperRepository {
   constructor(private readonly http: HttpClient) { }
 
   getNewEpisodies(): Observable<INewEpisodies[]> {
-    // return this.http.get<INewEpisodies[]>(environment.newEpisodies)
-    return of(NEW_EPISODIES_MOCK)
+    if (!environment.production) {
+      return of(NEW_EPISODIES_MOCK)
+    }
+
+    return this.http.get<INewEpisodies[]>(environment.newEpisodies)
   }
 }
