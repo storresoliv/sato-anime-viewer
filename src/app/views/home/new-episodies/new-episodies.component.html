@@ -1,10 +1,11 @@
 <h1 class="new-episodies-title">New episodies</h1>
 
 <ul class="new-episodies-list" *ngIf="newEpisodies">
-    <li class="episode" *ngFor="let episode of newEpisodies">
-        <img class="episode-image" [src]="episode.imageUrl" alt="episode-image-preview" referrerpolicy="no-referrer"
-            routerLink="/player" [queryParams]="{ name: episode.name, episode: episode.episode }">
-        <p class="episode-title">{{episode.title}}</p>
-        <p class="episode-subtitle">episode {{episode.episode}}</p>
+    <li class="episode" *ngFor="let episode of newEpisodies" routerLink="/player" [queryParams]="{ name: episode.name, episode: episode.episode }">
+        <img class="episode-image" [src]="episode.imageUrl" alt="episode-image-preview" referrerpolicy="no-referrer">
+        <section class="episode-footer">
+            <p class="episode-title">{{episode.title}}</p>
+            <p class="episode-subtitle">episode {{episode.episode}}</p>
+        </section>
     </li>
 </ul>

@@ -8,9 +8,9 @@
         left: var(--padding);
         text-decoration: none;
         border-radius: calc(var(--border-radius) / 2);
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary);
         padding: calc(var(--padding) / 4);
-        color: var(--color-primary);
+        color: var(--color-backoground-light);
 
         &.active {
             font-family: 'Material Icons';
