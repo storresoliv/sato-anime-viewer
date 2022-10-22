@@ -1,10 +1,11 @@
 {
     "name": "Anime Viewer",
     "short_name": "AViewer",
-    "theme_color": "#2196f3",
-    "background_color": "#2196f3",
-    "display": "standalone",
+    "theme_color": "#00202e",
+    "background_color": "#00202e",
+    "display": "fullscreen",
     "orientation": "portrait",
+    "fullscreen": "",
     "scope": "/",
     "start_url": "/"
 }
