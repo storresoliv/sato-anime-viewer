@@ -7,20 +7,22 @@
 
     .menu {
         position: absolute;
-        width: calc(100vw - 3rem);
+        width: calc(100vw - calc(2 * var(--padding)));
         display: flex;
         justify-content: space-between;
-        gap: 1rem;
         transform: translate(-50%, 0);
         bottom: 0.5rem;
         left: 50%;
         background-color: var(--color-primary);
-        padding: 1rem 1.5rem;
-        border-radius: 1.5rem;
+        padding: 1rem var(--padding);
+        border-radius: var(--border-radius);
 
         &-item {
-            color: var(--color-background-light);
             text-decoration: none;
+
+            &.active {
+                font-family: 'Material Icons';
+            }
         }
     }
 }

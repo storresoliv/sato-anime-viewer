@@ -1,4 +1,4 @@
-export const NEW_EPISODIES = [
+export const NEW_EPISODIES_MOCK = [
     {
         "title": "Renai Flops",
         "name": "renai-flops",
