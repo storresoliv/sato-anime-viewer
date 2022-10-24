@@ -17,7 +17,7 @@ export class NewEpisodiesComponent implements OnInit {
   }
 
   private getNewEpisodies(): void {
-    this.scraperRepository.getNewEpisodies().subscribe(episodies => {
+    this.scraperRepository.fetchNewEpisodies().subscribe(episodies => {
       this.newEpisodies = episodies
     })
   }
