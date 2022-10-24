@@ -142,5 +142,5 @@ export const NEW_EPISODIES_MOCK = [
 ]
 
 export const EPISODE_LINK_MOCK = {
-    link: "https://www3.animeflv.net/uploads/animes/thumbs/3708.jpg"
+    link: "https://mega.nz/embed#!stN1GJBJ!JDKOCbiR7V51vabtf1OkLqjJ76y_Wp3XG7sB--q6KeU"
 }

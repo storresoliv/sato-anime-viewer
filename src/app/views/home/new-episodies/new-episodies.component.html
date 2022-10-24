@@ -9,3 +9,10 @@
         </section>
     </li>
 </ul>
+
+<!-- Skeleton -->
+<ul class="new-episodies-list" *ngIf="!newEpisodies">
+    <li class="episode" *ngFor="let episode of [1,1,1]">
+        <div class="episode-image skeleton"></div>
+    </li>
+</ul>
