@@ -28,8 +28,8 @@ export class PlayerComponent implements OnInit {
   }
 
   private getEpisodeLink(name: string, episode: string): void {
-    this.scraperRepository.fetchEpisodeLink(name, episode).subscribe(({ link }) => {
-      this.playerLink = this.sanitizer.bypassSecurityTrustResourceUrl(link)
+    this.scraperRepository.fetchEpisodeLink(name, episode).subscribe(({ links }) => {
+      this.playerLink = this.sanitizer.bypassSecurityTrustResourceUrl(links[1])
     })
   }
 
