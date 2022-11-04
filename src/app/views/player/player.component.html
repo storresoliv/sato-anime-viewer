@@ -1,9 +1,32 @@
-<a class="home-link material-icons-outlined" routerLink="/home" routerLinkActive="active">arrow_back</a>
+<section class="player">
+    <header class="player-header">
+        <a class="player-header-home-link material-icons-outlined" routerLink="/home" routerLinkActive="active">arrow_back</a>
+        <ng-container *ngIf="videoLinks">
+            <h1 class="player-header-title">{{title}}</h1>
+        </ng-container>
+        <!-- Skeleton -->
+        <ng-container *ngIf="!videoLinks">
+            <h1 class="player-header-title skeleton"></h1>
+        </ng-container>
+    </header>
+    <nav class="player-menu">
+        <ng-container *ngIf="videoLinks">
+            <a *ngFor="let player of videoLinks" [ngClass]="['player-menu-item','button', player.active ? 'active':'']" (click)="selectVideoPlayer(player)">
+                {{ player.title }}
+            </a>
+        </ng-container>
+        <!-- Skeleton -->
+        <ng-container *ngIf="!videoLinks">
+            <a *ngFor="let player of [1,2,3]" [ngClass]="['player-menu-item','button', 'skeleton']"></a>
+        </ng-container>
+    </nav>
+</section>
+
 <ng-container *ngIf="playerLink">
-    <iframe [src]="playerLink" class="player" title="player" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe [src]="playerLink" class="video-player" title="player" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
 </ng-container>
 
 <!-- Skeleton -->
 <ng-container *ngIf="!playerLink">
-    <div class="player skeleton" ></div>
+  <div class="video-player skeleton"></div>
 </ng-container>

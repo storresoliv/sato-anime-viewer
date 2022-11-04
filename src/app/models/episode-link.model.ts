@@ -1,3 +1,8 @@
+interface IEpisode {
+  title: string;
+  link: string;
+}
+
 export interface IEpisodeLink {
-    links: string[]
+  links: IEpisode[];
 }

@@ -1,11 +1,15 @@
 :host {
-    display: block;
-    position: relative;
+  display: block;
 
-    .home-link {
-        position: absolute;
-        top: var(--padding);
-        left: var(--padding);
+  .player {
+    padding: var(--padding);
+
+    &-header {
+      display: flex;
+      gap: var(--padding);
+      align-items: center;
+
+      &-home-link {
         text-decoration: none;
         border-radius: calc(var(--border-radius) / 2);
         background-color: var(--color-primary);
@@ -13,12 +17,46 @@
         color: var(--color-backoground-light);
 
         &.active {
-            font-family: 'Material Icons';
+          font-family: "Material Icons";
         }
+      }
+
+      &-title {
+        min-width: calc(var(--font-size) * 5);
+        height: var(--font-size);
+        border-radius: var(--border-radius);
+      }
     }
 
-    .player {
-        width: 100vw;
-        height: 45vh;
+    &-menu {
+      display: flex;
+      gap: var(--padding);
+      list-style-type: none;
+      padding-top: var(--padding);
+
+      &-item {
+        border-radius: var(--border-radius);
+        padding: calc(var(--padding) / 2) var(--padding);
+        background-color: var(--color-secondary-variant);
+        color: var(--color-backoground-light);
+        min-height: calc(var(--font-size) * 1.5);
+        min-width: calc(var(--font-size) * 2.5);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--color-primary-variant);
+        }
+
+        &.active {
+          background-color: var(--color-primary);
+        }
+      }
     }
+  }
+
+  .video-player {
+    width: 100vw;
+    height: 45vh;
+    border: 0;
+  }
 }
