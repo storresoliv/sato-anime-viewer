@@ -32,6 +32,12 @@
             .episode {
                 text-align: left;
                 position: relative;
+                cursor: pointer;
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                }
 
                 &-image {
                     border-radius: var(--border-radius);

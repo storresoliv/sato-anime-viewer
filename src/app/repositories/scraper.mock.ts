@@ -141,15 +141,136 @@ export const NEW_EPISODIES_MOCK = [
   },
 ];
 
-export const EPISODE_LINK_MOCK = {
-  links: [
-    {
-      title: 'mega',
-      link: 'https://mega.nz/embed#!stN1GJBJ!JDKOCbiR7V51vabtf1OkLqjJ76y_Wp3XG7sB--q6KeU',
-    },
-    {
-      title: 'fembed',
-      link: 'https://mega.nz/embed#!stN1GJBJ!JDKOCbiR7V51vabtf1OkLqjJ76y_Wp3XG7sB--q6KeU',
-    },
-  ],
-};
+export const EPISODE_LINK_MOCK = [
+  {
+    title: 'mega',
+    link: 'https://mega.nz/embed#!stN1GJBJ!JDKOCbiR7V51vabtf1OkLqjJ76y_Wp3XG7sB--q6KeU',
+  },
+  {
+    title: 'fembed',
+    link: 'https://mega.nz/embed#!stN1GJBJ!JDKOCbiR7V51vabtf1OkLqjJ76y_Wp3XG7sB--q6KeU',
+  },
+];
+
+export const SERIES_MOCK = [
+  {
+    name: 'KanColle: Itsuka Ano Umi de',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3713.jpg',
+    link: 'https://www3.animeflv.net/anime/kancolle-itsuka-ano-umi-de',
+  },
+  {
+    name: 'Arknights: Reimei Zensou',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3712.jpg',
+    link: 'https://www3.animeflv.net/anime/arknights-reimei-zensou',
+  },
+  {
+    name: 'Fumetsu no Anata e 2nd Season',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3711.jpg',
+    link: 'https://www3.animeflv.net/anime/fumetsu-no-anata-e-2nd-season',
+  },
+  {
+    name: '4-nin wa Sorezore Uso wo Tsuku',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3710.jpg',
+    link: 'https://www3.animeflv.net/anime/4nin-wa-sorezore-uso-wo-tsuku',
+  },
+  {
+    name: 'Urusei Yatsura (2022)',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3709.jpg',
+    link: 'https://www3.animeflv.net/anime/urusei-yatsura-2022',
+  },
+  {
+    name: 'Renai Flops',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3708.jpg',
+    link: 'https://www3.animeflv.net/anime/renai-flops',
+  },
+  {
+    name: 'Chainsaw Man',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3707.jpg',
+    link: 'https://www3.animeflv.net/anime/chainsaw-man',
+  },
+  {
+    name: 'Fuufu Ijou, Koibito Miman.',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3706.jpg',
+    link: 'https://www3.animeflv.net/anime/fuufu-ijou-koibito-miman',
+  },
+  {
+    name: 'Peter Grill to Kenja no Jikan: Super Extra',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3705.jpg',
+    link: 'https://www3.animeflv.net/anime/peter-grill-to-kenja-no-jikan-super-extra',
+  },
+  {
+    name: 'Bleach: Sennen Kessen-hen',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3704.jpg',
+    link: 'https://www3.animeflv.net/anime/bleach-sennen-kessenhen',
+  },
+  {
+    name: 'Yowamushi Pedal: Limit Break',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3703.jpg',
+    link: 'https://www3.animeflv.net/anime/yowamushi-pedal-limit-break',
+  },
+  {
+    name: 'Noumin Kanren no Skill bakka Agetetara Nazeka Tsuyoku Natta.',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3702.jpg',
+    link: 'https://www3.animeflv.net/anime/noumin-kanren-no-skill-bakka-agetetara-nazeka-tsuyoku-natta',
+  },
+  {
+    name: 'Blue Lock',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3701.jpg',
+    link: 'https://www3.animeflv.net/anime/blue-lock',
+  },
+  {
+    name: 'Bocchi the Rock!',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3700.jpg',
+    link: 'https://www3.animeflv.net/anime/bocchi-the-rock',
+  },
+  {
+    name: 'Mairimashita! Iruma-kun 3rd Season',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3699.jpg',
+    link: 'https://www3.animeflv.net/anime/mairimashita-irumakun-3rd-season',
+  },
+  {
+    name: 'Seiken Densetsu: Legend of Mana - The Teardrop Crystal',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3698.jpg',
+    link: 'https://www3.animeflv.net/anime/seiken-densetsu-legend-of-mana-the-teardrop-crystal',
+  },
+  {
+    name: 'Akiba Maid Sensou',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3697.jpg',
+    link: 'https://www3.animeflv.net/anime/akiba-maid-sensou',
+  },
+  {
+    name: 'Mushikaburi-hime',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3696.jpg',
+    link: 'https://www3.animeflv.net/anime/mushikaburihime',
+  },
+  {
+    name: 'Futoku no Guild',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3695.jpg',
+    link: 'https://www3.animeflv.net/anime/futoku-no-guild',
+  },
+  {
+    name: 'Do It Yourself!!',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3694.jpg',
+    link: 'https://www3.animeflv.net/anime/do-it-yourself',
+  },
+  {
+    name: 'Muv-Luv Alternative 2nd Season',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3693.jpg',
+    link: 'https://www3.animeflv.net/anime/muvluv-alternative-2nd-season',
+  },
+  {
+    name: 'Human Bug Daigaku',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3692.jpg',
+    link: 'https://www3.animeflv.net/anime/human-bug-daigaku',
+  },
+  {
+    name: 'Mob Psycho 100 III',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3691.jpg',
+    link: 'https://www3.animeflv.net/anime/mob-psycho-100-iii',
+  },
+  {
+    name: 'Kage no Jitsuryokusha ni Naritakute!',
+    imageUrl: 'https://www3.animeflv.net/uploads/animes/covers/3690.jpg',
+    link: 'https://www3.animeflv.net/anime/kage-no-jitsuryokusha-ni-naritakute',
+  },
+];

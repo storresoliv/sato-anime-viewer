@@ -4,7 +4,7 @@ import {
   SafeResourceUrl,
 } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { IEpisodeLink } from 'src/app/models/episode-link.model';
+import { IEpisode } from 'src/app/models/episode-link.model';
 import { ScraperRepository } from 'src/app/repositories';
 
 type VideoLink = { title: string; link: SafeResourceUrl; active: boolean };
@@ -74,8 +74,8 @@ export class PlayerComponent implements OnInit {
     this.videoLinks = videoLinks;
   }
 
-  private transformVideoLinks({ links }: IEpisodeLink): VideoLink[] {
-    return links.map(
+  private transformVideoLinks(episodes: IEpisode[]): VideoLink[] {
+    return episodes.map(
       ({ title, link }) =>
         ({
           title,

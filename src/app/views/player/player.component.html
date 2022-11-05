@@ -4,6 +4,7 @@
         <ng-container *ngIf="videoLinks">
             <h1 class="player-header-title">{{title}}</h1>
         </ng-container>
+
         <!-- Skeleton -->
         <ng-container *ngIf="!videoLinks">
             <h1 class="player-header-title skeleton">{{title}}</h1>
@@ -15,6 +16,7 @@
                 {{ player.title }}
             </a>
         </ng-container>
+        
         <!-- Skeleton -->
         <ng-container *ngIf="!videoLinks">
             <a *ngFor="let player of [1,2,3]" [ngClass]="['player-menu-item','button', 'skeleton']">title</a>
