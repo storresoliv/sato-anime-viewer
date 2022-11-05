@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { NewEpisodiesComponent } from './new-episodies/new-episodies.component';
 import { SeriesComponent } from './series/series.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SeriesComponent } from './series/series.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ComponentsModule
   ]
 })
 export class HomeModule { }

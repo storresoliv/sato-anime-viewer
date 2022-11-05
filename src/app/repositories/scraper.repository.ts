@@ -84,7 +84,7 @@ export class ScraperRepository {
         map((series) =>
           series.map((serie) => ({
             ...serie,
-            link: this.sanitizer.bypassSecurityTrustResourceUrl(serie.link as string),
+            imageUrl: this.sanitizer.bypassSecurityTrustResourceUrl(serie.imageUrl as string),
           }))
         )
       );

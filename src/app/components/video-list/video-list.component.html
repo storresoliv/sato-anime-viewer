@@ -1,0 +1,30 @@
+<section class="head">
+    <h1 class="video-title" *ngIf="videoList">{{ title }}</h1>
+    <h1 class="video-title skeleton" *ngIf="!videoList">{{ title }}</h1>
+</section>
+
+<section class="content">
+    <ng-container *ngIf="videoList">
+        <ul [ngClass]="['video-list', direction]">
+            <li class="item" *ngFor="let video of videoList" (click)="clickEvent.emit(video)">
+                <img class="item-image" [src]="video.imageUrl" alt="item-image-preview" referrerpolicy="no-referrer">
+                <section class="item-footer">
+                    <p class="item-title">{{video.title}}</p>
+                    <p class="item-subtitle">{{video.subtitle}}</p>
+                </section>
+            </li>
+        </ul>
+    </ng-container>
+    
+    
+    <!-- Skeleton -->
+    <ng-container *ngIf="!videoList">
+        <ul [ngClass]="['video-list', direction]">
+            <li class="item" *ngFor="let video of [1,2,3,4,5]">
+                <div class="item-image skeleton"></div>
+            </li>
+        </ul>
+    </ng-container>
+</section>
+
+

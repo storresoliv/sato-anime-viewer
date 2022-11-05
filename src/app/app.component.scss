@@ -1,14 +1,19 @@
 :host {
+    --menu-width: calc(2 * var(--padding));
+    --padding-bottom: calc(5 * var(--padding));
+
+
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: var(--padding-bottom);
     display: block;
     background-color: var(--color-background-dark);
     position: relative;
 
     .menu {
         display: none;
-        position: absolute;
-        width: calc(100vw - calc(2 * var(--padding)));
+        position: fixed;
+        width: calc(100vw - var(--menu-width));
         justify-content: space-between;
         transform: translate(-50%, 0);
         bottom: 0.5rem;

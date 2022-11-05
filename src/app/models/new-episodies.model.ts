@@ -3,5 +3,4 @@ export interface INewEpisodies {
     name: string
     episode: string
     imageUrl: string
-    link: string
 }
