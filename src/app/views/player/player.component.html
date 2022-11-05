@@ -6,7 +6,7 @@
         </ng-container>
         <!-- Skeleton -->
         <ng-container *ngIf="!videoLinks">
-            <h1 class="player-header-title skeleton"></h1>
+            <h1 class="player-header-title skeleton">{{title}}</h1>
         </ng-container>
     </header>
     <nav class="player-menu">
@@ -17,16 +17,18 @@
         </ng-container>
         <!-- Skeleton -->
         <ng-container *ngIf="!videoLinks">
-            <a *ngFor="let player of [1,2,3]" [ngClass]="['player-menu-item','button', 'skeleton']"></a>
+            <a *ngFor="let player of [1,2,3]" [ngClass]="['player-menu-item','button', 'skeleton']">title</a>
         </ng-container>
     </nav>
 </section>
 
-<ng-container *ngIf="playerLink">
-    <iframe [src]="playerLink" class="video-player" title="player" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-</ng-container>
-
-<!-- Skeleton -->
-<ng-container *ngIf="!playerLink">
-  <div class="video-player skeleton"></div>
-</ng-container>
+<section class="video">
+    <ng-container *ngIf="playerLink">
+        <iframe [src]="playerLink" class="video-player" title="player" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    </ng-container>
+    
+    <!-- Skeleton -->
+    <ng-container *ngIf="!playerLink">
+        <div class="video-player skeleton-no-radius"></div>
+    </ng-container>
+</section>

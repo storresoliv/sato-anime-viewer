@@ -1,6 +1,15 @@
 :root {
     .skeleton {
         animation: skeleton-loading 1s linear infinite alternate;
+        box-sizing: content-box;
+        width: fit-content;
+        color: transparent;
+        border-radius: var(--padding);
+    }
+
+    .skeleton-no-radius {
+        @extend .skeleton;
+        border-radius: 0;
     }
 
     @keyframes skeleton-loading {

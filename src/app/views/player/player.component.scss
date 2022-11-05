@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
 
   .player {
     padding: var(--padding);
@@ -12,9 +13,13 @@
       &-home-link {
         text-decoration: none;
         border-radius: calc(var(--border-radius) / 2);
-        background-color: var(--color-primary);
+        background-color: var(--color-secondary-variant);
         padding: calc(var(--padding) / 4);
         color: var(--color-backoground-light);
+
+        &:hover {
+          background-color: var(--color-primary-variant);
+        }
 
         &.active {
           font-family: "Material Icons";
@@ -38,9 +43,6 @@
         border-radius: var(--border-radius);
         padding: calc(var(--padding) / 2) var(--padding);
         background-color: var(--color-secondary-variant);
-        color: var(--color-backoground-light);
-        min-height: calc(var(--font-size) * 1.5);
-        min-width: calc(var(--font-size) * 2.5);
         cursor: pointer;
 
         &:hover {
@@ -54,9 +56,24 @@
     }
   }
 
-  .video-player {
-    width: 100vw;
-    height: 45vh;
-    border: 0;
+  .video {
+    display: flex;
+    background-color: var(--color-black);
+    justify-content: space-around;
+
+    &-player {
+      width: 100vw;
+      height: 45vh;
+      border: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .video {
+      &-player {
+        width: 768px;
+        height: 55vh;
+      }
+    }
   }
 }

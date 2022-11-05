@@ -1,18 +1,25 @@
-<h1 class="new-episodies-title">New episodies</h1>
+<section class="head">
+    <h1 class="new-episodies-title" *ngIf="newEpisodies">New episodies</h1>
+    <h1 class="new-episodies-title skeleton" *ngIf="!newEpisodies">New episodies</h1>
+</section>
 
-<ul class="new-episodies-list" *ngIf="newEpisodies">
-    <li class="episode" *ngFor="let episode of newEpisodies" routerLink="/player" [queryParams]="{ name: episode.name, episode: episode.episode }">
-        <img class="episode-image" [src]="episode.imageUrl" alt="episode-image-preview" referrerpolicy="no-referrer">
-        <section class="episode-footer">
-            <p class="episode-title">{{episode.title}}</p>
-            <p class="episode-subtitle">episode {{episode.episode}}</p>
-        </section>
-    </li>
-</ul>
+<section class="content">
+    <ul class="new-episodies-list" *ngIf="newEpisodies">
+        <li class="episode" *ngFor="let episode of newEpisodies" routerLink="/player" [queryParams]="{ name: episode.name, episode: episode.episode }">
+            <img class="episode-image" [src]="episode.imageUrl" alt="episode-image-preview" referrerpolicy="no-referrer">
+            <section class="episode-footer">
+                <p class="episode-title">{{episode.title}}</p>
+                <p class="episode-subtitle">episode {{episode.episode}}</p>
+            </section>
+        </li>
+    </ul>
+    
+    <!-- Skeleton -->
+    <ul class="new-episodies-list" *ngIf="!newEpisodies">
+        <li class="episode" *ngFor="let episode of [1,2,3,4,5]">
+            <div class="episode-image skeleton"></div>
+        </li>
+    </ul>
+</section>
 
-<!-- Skeleton -->
-<ul class="new-episodies-list" *ngIf="!newEpisodies">
-    <li class="episode" *ngFor="let episode of [1,1,1]">
-        <div class="episode-image skeleton"></div>
-    </li>
-</ul>
+

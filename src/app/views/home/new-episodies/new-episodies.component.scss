@@ -1,9 +1,14 @@
 :host {
+    display: block;
+
+    .head {
+        padding: var(--padding);
+    }
+
     .new-episodies {
         &-title {
             font-size: 1.5rem;
             font-weight: 400;
-            padding: var(--padding);
         }
 
         &-list {
