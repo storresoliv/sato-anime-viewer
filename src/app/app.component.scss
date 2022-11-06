@@ -29,6 +29,10 @@
         &-item {
             text-decoration: none;
 
+            &--hiden {
+                display: none;
+            }
+
             &.active {
                 font-family: 'Material Icons';
             }
