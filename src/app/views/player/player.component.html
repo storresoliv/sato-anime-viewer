@@ -1,9 +1,21 @@
-<a class="home-link material-icons-outlined" routerLink="/home" routerLinkActive="active">arrow_back</a>
+<a
+  class="home-link material-icons-outlined"
+  routerLink="/home"
+  routerLinkActive="active"
+  >arrow_back</a
+>
 <ng-container *ngIf="playerLink">
-    <iframe [src]="playerLink" class="player" title="player" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+  <iframe
+    [src]="playerLink"
+    class="player"
+    title="player"
+    allowfullscreen="true"
+    webkitallowfullscreen="true"
+    mozallowfullscreen="true"
+  ></iframe>
 </ng-container>
 
 <!-- Skeleton -->
 <ng-container *ngIf="!playerLink">
-    <div class="player skeleton" ></div>
+  <div class="player skeleton"></div>
 </ng-container>

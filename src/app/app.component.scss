@@ -1,32 +1,32 @@
 :host {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    background-color: var(--color-background-dark);
-    position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: relative;
 
-    .menu {
-        display: none;
-        position: absolute;
-        width: calc(100vw - calc(2 * var(--padding)));
-        justify-content: space-between;
-        transform: translate(-50%, 0);
-        bottom: 0.5rem;
-        left: 50%;
-        background-color: var(--color-primary);
-        padding: 1rem var(--padding);
-        border-radius: var(--border-radius);
+  .menu {
+    display: none;
+    position: fixed;
+    width: calc(100vw - calc(2 * var(--padding)));
+    justify-content: space-between;
+    transform: translate(-50%, 0);
+    bottom: 0.5rem;
+    left: 50%;
+    background-color: var(--color-primary);
+    padding: 1rem var(--padding);
+    border-radius: var(--border-radius);
+    z-index: 1;
 
-        &.active-link {
-            display: flex;
-        }
-
-        &-item {
-            text-decoration: none;
-
-            &.active {
-                font-family: 'Material Icons';
-            }
-        }
+    &.active-link {
+      display: flex;
     }
+
+    &-item {
+      text-decoration: none;
+
+      &.active {
+        font-family: 'Material Icons';
+      }
+    }
+  }
 }

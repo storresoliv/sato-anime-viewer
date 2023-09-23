@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { ScraperRepository } from './scraper.repository';
+import { ScraperRepository } from './scraper.repository'
 
 describe('ScraperRepositoryService', () => {
-  let service: ScraperRepository;
+  let service: ScraperRepository
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ScraperRepository);
-  });
+    TestBed.configureTestingModule({})
+    service = TestBed.inject(ScraperRepository)
+  })
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+    expect(service).toBeTruthy()
+  })
+})

@@ -1,7 +1,13 @@
+export interface ILink {
+  url: string
+  domain: string
+}
+
 export interface INewEpisodies {
-    title: string
-    name: string
-    episode: string
-    imageUrl: string
-    link: string
+  id: string
+  title: string
+  name: string
+  episodeNumber: string
+  thumb_url: string
+  links: ILink[]
 }

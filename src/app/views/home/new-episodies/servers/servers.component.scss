@@ -1,0 +1,16 @@
+:host {
+  .server {
+    &-link {
+      text-decoration: none;
+
+    }
+
+    &-name {
+      padding: 0 0 8px 0;
+      
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

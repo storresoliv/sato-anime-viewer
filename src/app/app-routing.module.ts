@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { APP_ROUTES } from './app.routes';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { APP_ROUTES } from './app.routes'
 
-import { HomeComponent } from './views/home/home.component';
-import { FavoriteComponent } from './views/favorite/favorite.component';
-import { SettingsComponent } from './views/settings/settings.component';
-import { PlayerComponent } from './views/player/player.component';
+import { HomeComponent } from './views/home/home.component'
+import { FavoriteComponent } from './views/favorite/favorite.component'
+import { SettingsComponent } from './views/settings/settings.component'
+import { PlayerComponent } from './views/player/player.component'
 
 const routes: Routes = [
   {
@@ -28,11 +28,11 @@ const routes: Routes = [
   {
     path: APP_ROUTES.PLAYER,
     component: PlayerComponent
-  },
-];
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

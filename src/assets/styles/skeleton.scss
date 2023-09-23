@@ -1,19 +1,19 @@
 :root {
-    .skeleton {
-        animation: skeleton-loading 1s linear infinite alternate;
+  .skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 80%);
     }
 
-    @keyframes skeleton-loading {
-        0% {
-            background-color: hsl(200, 20%, 80%);
-        }
-
-        50% {
-            background-color: hsl(200, 20%, 90%);
-        }
-
-        100% {
-            background-color: hsl(200, 20%, 100%);
-        }
+    50% {
+      background-color: hsl(200, 20%, 90%);
     }
+
+    100% {
+      background-color: hsl(200, 20%, 100%);
+    }
+  }
 }

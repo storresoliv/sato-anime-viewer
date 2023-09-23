@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { IEpisodeLink } from 'src/app/models/episode-link.model';
-import { ScraperRepository } from 'src/app/repositories';
+import { Component, OnInit } from '@angular/core'
+import {
+  DomSanitizer,
+  SafeResourceUrl,
+  SafeUrl
+} from '@angular/platform-browser'
+import { ActivatedRoute } from '@angular/router'
+import { Observable } from 'rxjs'
+import { IEpisodeLink } from 'src/app/models/episode-link.model'
+import { ScraperRepository } from 'src/app/repositories'
 
 @Component({
   selector: 'app-player',
@@ -11,9 +15,13 @@ import { ScraperRepository } from 'src/app/repositories';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-  public playerLink!: SafeResourceUrl;
+  public playerLink!: SafeResourceUrl
 
-  constructor(private readonly route: ActivatedRoute, private readonly scraperRepository: ScraperRepository, private readonly sanitizer: DomSanitizer) { }
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly scraperRepository: ScraperRepository,
+    private readonly sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit(): void {
     this.getQueryParams()
@@ -28,9 +36,12 @@ export class PlayerComponent implements OnInit {
   }
 
   private getEpisodeLink(name: string, episode: string): void {
-    this.scraperRepository.fetchEpisodeLink(name, episode).subscribe(({ links }) => {
-      this.playerLink = this.sanitizer.bypassSecurityTrustResourceUrl(links[1])
-    })
+    this.scraperRepository
+      .fetchEpisodeLink(name, episode)
+      .subscribe(({ links }) => {
+        this.playerLink = this.sanitizer.bypassSecurityTrustResourceUrl(
+          links[1]
+        )
+      })
   }
-
 }

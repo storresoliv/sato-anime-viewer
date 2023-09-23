@@ -3,11 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
 
-  newEpisodies: 'http://localhost:3000/animes/new_episodies',
-  episodeLink: 'http://localhost:3000/animes'
-};
+  newEpisodies: 'http://192.168.1.88:3000/episode',
+  episodeLink: 'http://localhost:3000'
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

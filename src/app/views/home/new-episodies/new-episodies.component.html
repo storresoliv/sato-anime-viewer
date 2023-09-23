@@ -1,18 +1,33 @@
 <h1 class="new-episodies-title">New episodies</h1>
 
 <ul class="new-episodies-list" *ngIf="newEpisodies">
-    <li class="episode" *ngFor="let episode of newEpisodies" routerLink="/player" [queryParams]="{ name: episode.name, episode: episode.episode }">
-        <img class="episode-image" [src]="episode.imageUrl" alt="episode-image-preview" referrerpolicy="no-referrer">
-        <section class="episode-footer">
-            <p class="episode-title">{{episode.title}}</p>
-            <p class="episode-subtitle">episode {{episode.episode}}</p>
-        </section>
-    </li>
+  <li
+    class="episode"
+    *ngFor="let episode of newEpisodies"
+    (mouseover)="onMouseOver(episode)"
+    (touchstart)="onTouchStart(episode)"
+  >
+    <section [ngClass]="episode.selected ? 'episode-servers--selected' : 'episode-servers'">
+      <ng-container *ngFor="let link of episode.links">
+        <app-servers [link]="link"></app-servers>
+      </ng-container>
+    </section>
+    <img
+      class="episode-image"
+      [src]="episode.thumb_url"
+      alt="episode-image-preview"
+      referrerpolicy="no-referrer"
+    />
+    <section class="episode-footer">
+      <p class="episode-title">{{ episode.title }}</p>
+      <p class="episode-subtitle">episode {{ episode.episodeNumber }}</p>
+    </section>
+  </li>
 </ul>
 
 <!-- Skeleton -->
 <ul class="new-episodies-list" *ngIf="!newEpisodies">
-    <li class="episode" *ngFor="let episode of [1,1,1]">
-        <div class="episode-image skeleton"></div>
-    </li>
+  <li class="episode" *ngFor="let episode of [1, 1, 1]">
+    <div class="episode-image skeleton"></div>
+  </li>
 </ul>
