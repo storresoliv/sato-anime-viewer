@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ILink } from 'src/app/models/new-episodies.model'
+import { ILink } from 'src/app/models/new-episodes.model'
 
 @Component({
   selector: 'app-servers',

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable, of, ReplaySubject, tap } from 'rxjs'
-import { INewEpisodies } from '../models/new-episodies.model'
+import { INewEpisodes } from '../models/new-episodes.model'
 import { environment } from 'src/environments/environment'
-import { NEW_EPISODIES_MOCK } from './scraper.mock'
+import { NEW_EPISODES_MOCK } from './scraper.mock'
 import { IEpisodeLink } from '../models/episode-link.model'
 
 @Injectable({
@@ -12,25 +12,25 @@ import { IEpisodeLink } from '../models/episode-link.model'
 export class ScraperRepository {
   constructor(private readonly http: HttpClient) {}
 
-  private prevNewEpisodies$ = new ReplaySubject<INewEpisodies[]>()
+  private prevNewEpisodes$ = new ReplaySubject<INewEpisodes>()
   private prevEpisodeLink$$: { [key: string]: IEpisodeLink } = {}
 
-  fetchNewEpisodies(): Observable<INewEpisodies[]> {
+  fetchNewEpisodes(): Observable<INewEpisodes> {
     if (!environment.production) {
-      return of(NEW_EPISODIES_MOCK)
+      return of(NEW_EPISODES_MOCK)
     }
 
-    this.getNewEpisodies().subscribe((newEpisodies) => {
-      this.prevNewEpisodies$.next(newEpisodies)
+    this.getNewEpisodes().subscribe((newEpisodes) => {
+      this.prevNewEpisodes$.next(newEpisodes)
     })
 
-    return this.prevNewEpisodies$
+    return this.prevNewEpisodes$
   }
 
-  private getNewEpisodies(): Observable<INewEpisodies[]> {
-    const url = `${environment.newEpisodies}?sort=desc`
+  private getNewEpisodes(): Observable<INewEpisodes> {
+    const url = `${environment.newEpisodes}?sort=desc&per_page=100`
 
-    return this.http.get<INewEpisodies[]>(url)
+    return this.http.get<INewEpisodes>(url)
   }
 
   fetchEpisodeLink(name: string, episode: string): Observable<IEpisodeLink> {

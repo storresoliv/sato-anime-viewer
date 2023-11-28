@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
 
-  newEpisodies: 'http://192.168.1.88:3000/episode',
+  newEpisodes: 'http://192.168.1.88:3000/episode',
   episodeLink: 'http://localhost:3000'
 }
 

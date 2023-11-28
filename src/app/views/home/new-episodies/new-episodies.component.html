@@ -1,16 +1,18 @@
-<h1 class="new-episodies-title">New episodies</h1>
+<h1 class="new-episodes-title">New episodes</h1>
 
-<ul class="new-episodies-list" *ngIf="newEpisodies">
+<ul class="new-episodes-list" *ngIf="newEpisodes">
   <li
     class="episode"
-    *ngFor="let episode of newEpisodies"
+    *ngFor="let episode of newEpisodes"
     (mouseover)="onMouseOver(episode)"
     (touchstart)="onTouchStart(episode)"
   >
     <section [ngClass]="episode.selected ? 'episode-servers--selected' : 'episode-servers'">
-      <ng-container *ngFor="let link of episode.links">
-        <app-servers [link]="link"></app-servers>
-      </ng-container>
+      <section class="episode-servers--list">
+        <ng-container *ngFor="let link of episode.links">
+          <app-servers [link]="link"></app-servers>
+        </ng-container>
+      </section>
     </section>
     <img
       class="episode-image"
@@ -19,14 +21,16 @@
       referrerpolicy="no-referrer"
     />
     <section class="episode-footer">
-      <p class="episode-title">{{ episode.title }}</p>
-      <p class="episode-subtitle">episode {{ episode.episodeNumber }}</p>
+      <p class="episode-subtitle" *ngIf="episode.selected">
+        {{ episode.title }}
+      </p>
+      <p class="episode-subtitle" *ngIf="!episode.selected">{{ ('E' + episode.episodeNumber) }} <br> {{ episode.createdAt | date:'longDate' }} </p>
     </section>
   </li>
 </ul>
 
 <!-- Skeleton -->
-<ul class="new-episodies-list" *ngIf="!newEpisodies">
+<ul class="new-episodes-list" *ngIf="!newEpisodes">
   <li class="episode" *ngFor="let episode of [1, 1, 1]">
     <div class="episode-image skeleton"></div>
   </li>

@@ -1,53 +1,49 @@
 import { Component, OnInit } from '@angular/core'
-import { INewEpisodies } from 'src/app/models/new-episodies.model'
+import { INewEpisode, INewEpisodes } from 'src/app/models/new-episodes.model'
 import { ScraperRepository } from 'src/app/repositories'
 
-interface INewEpisodeItem extends INewEpisodies {
+interface INewEpisodeItem extends INewEpisode {
   selected: boolean
 }
 
 @Component({
-  selector: 'app-new-episodies',
+  selector: 'app-new-episodes',
   templateUrl: './new-episodies.component.html',
   styleUrls: ['./new-episodies.component.scss']
 })
-export class NewEpisodiesComponent implements OnInit {
-  #episodeOverTarget = ''
+export class NewEpisodesComponent implements OnInit {
+  #episodeOverTargetItem!: INewEpisodeItem
 
-  public newEpisodies!: INewEpisodeItem[]
+  public newEpisodes!: INewEpisodeItem[]
 
 
   constructor(private readonly scraperRepository: ScraperRepository) {}
 
   ngOnInit(): void {
-    this.getNewEpisodies()
+    this.getNewEpisodes()
   }
 
   onTouchStart(episode: INewEpisodeItem) {
     this.onMouseOver(episode)
   }
 
-  onMouseOver(episode: INewEpisodeItem) {
-    if (this.#episodeOverTarget === episode.id) {
+  onMouseOver(episode: INewEpisodeItem) { 
+    if (this.#episodeOverTargetItem?.id === episode.id) {
       return
     }
 
-    this.#episodeOverTarget = episode.id
+    if (this.#episodeOverTargetItem) {
+      this.#episodeOverTargetItem.selected = false
+    }
 
-    this.newEpisodies = this.newEpisodies.map(ep => {
-      let selected = false
+    this.#episodeOverTargetItem = episode
 
-      if (ep.id === episode.id) {
-        selected = true
-      }
-
-      return { ...ep, selected }
-    })
+    this.#episodeOverTargetItem.selected = true
   }
 
-  private getNewEpisodies(): void {
-    this.scraperRepository.fetchNewEpisodies().subscribe((episodies) => {
-      this.newEpisodies = episodies.map(ep => ({ ...ep, selected: false }))
+  private getNewEpisodes(): void {
+    this.scraperRepository.fetchNewEpisodes().subscribe((newEpisodes: INewEpisodes) => {
+      this.newEpisodes = newEpisodes.data.map(ep => ({ ...ep, selected: false }))
     })
   }
 }
