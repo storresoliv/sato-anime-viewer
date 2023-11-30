@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable, of, ReplaySubject, tap } from 'rxjs'
-import { INewEpisodes } from '../models/new-episodes.model'
+import { map, Observable, of, ReplaySubject, tap } from 'rxjs'
+import { ILink, INewEpisode, INewEpisodes } from '../models/new-episodes.model'
 import { environment } from 'src/environments/environment'
 import { NEW_EPISODES_MOCK } from './scraper.mock'
 import { IEpisodeLink } from '../models/episode-link.model'
@@ -25,6 +25,19 @@ export class ScraperRepository {
     })
 
     return this.prevNewEpisodes$
+  }
+
+  getServers(): Observable<string[]> {
+    const mapToEpisodes = map((newEpisode: INewEpisodes) => newEpisode.data)
+    const mapToLinks = map((episodes: INewEpisode[]) => episodes.flatMap((episode) => episode.links))
+    const flatMapToDomain = map((links: ILink[]) => links.flatMap((link) => link.domain))
+    const flatMapToUniqueDomains = map((domains: string[]) => [...new Set(domains)])
+
+    return this.prevNewEpisodes$
+      .pipe(mapToEpisodes)
+      .pipe(mapToLinks)
+      .pipe(flatMapToDomain)
+      .pipe(flatMapToUniqueDomains)
   }
 
   private getNewEpisodes(): Observable<INewEpisodes> {

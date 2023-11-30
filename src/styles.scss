@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
 @import 'assets/styles/skeleton.scss';
 @import 'assets/styles/variables.scss';
 @import 'assets/styles/colors.scss';
@@ -7,14 +8,36 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Overpass Mono', monospace,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: var(--font-size);
   color: var(--color-background-light);
+
+  --title-font: var(--title-font-size-mobile);
+  --subtitle-font: var(--subtitle-font-size-mobile);
+
+  mat-card-title.mat-mdc-card-title {
+    font-size: var(--title-font);
+  }
+
+  mat-card-subtitle.mat-mdc-card-subtitle {
+    font-size: var(--subtitle-font);
+  }
+
+  @media screen and (min-width: 740px) {
+    --title-font: var(--title-font-size-tablet);
+    --subtitle-font: var(--subtitle-font-size-tablet);
+  }
+
+  @media screen and (min-width: 1020px) {
+    --title-font: var(--title-font-size-desktop);
+    --subtitle-font: var(--subtitle-font-size-desktop);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
   background-color: var(--color-background-dark);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

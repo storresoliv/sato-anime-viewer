@@ -1,27 +1,47 @@
 :host {
-
   * {
     padding: 0;
     margin: 0;
   }
 
   --flex-direction: row;
-  --width: 100%;
-  --image-height: 136px;
+  --image-width: 200px;
+  --image-height: auto;
+  --latest-image-width: 100%;
+  --latest-image-height: auto;
   --image-min-width: 112px;
   --border-radius: 4px 4px 0 0;
 
+  .skeleton {
+    width: var(--image-width);
+    height: var(--image-height);
+  }
+
   .new-episodes {
+    &-last-episode {
+      padding-top: var(--padding);
+      background-color: var(--color-background-dark-2);
+      box-shadow: none;
+      align-items: center;
+      display: flex;
+
+      &-image {
+        width: var(--latest-image-width);
+        height: var(--latest-image-height);
+        cursor: pointer;
+      }
+    }
+
     &-title {
       font-size: 1.5rem;
       font-weight: 400;
-      padding: var(--padding);
+      padding: var(--padding) var(--padding) var(--padding) 0;
     }
 
     &-list {
-      padding: 0 var(--padding);
+      padding: 0 var(--padding) var(--padding) 0;
       display: flex;
-      gap: 0.5rem;
+      gap: var(--padding);
       list-style: none;
       overflow-y: visible;
       flex-direction: var(--flex-direction);
@@ -41,6 +61,10 @@
         position: relative;
         height: var(--image-height);
         border-radius: var(--border-radius);
+
+        &-info {
+          margin-top: 4px;
+        }
         
         &-servers, &-servers--selected {
           position: absolute;
@@ -76,11 +100,9 @@
         }
 
         &-image {
-          border-radius: var(--border-radius);
-          min-width: var(--image-min-width);
+          cursor: pointer;
           height: var(--image-height);
-          width: var(--width);
-          display: block;
+          width: var(--image-width);
         }
 
         &-footer {
@@ -100,6 +122,9 @@
 
   @media screen and (min-width: 740px) {
     --flex-direction: row;
-    --width: auto;
+    --latest-image-width: 500px;
+    --latest-image-height: 333px;
+    --image-width: 300px;
+    --image-height: 200px;
   }
 }

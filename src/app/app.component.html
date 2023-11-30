@@ -1,6 +1,7 @@
 <router-outlet></router-outlet>
 
 <nav class="menu" routerLinkActive="active-link">
+  
   <a
     class="menu-item material-icons-outlined"
     routerLink="/home"
@@ -19,4 +20,9 @@
     routerLinkActive="active"
     >settings</a
   >
+
+  <button mat-button [matMenuTriggerFor]="aboveMenu">Cambiar Servidor</button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item *ngFor="let server of servers" (click)="setServer(server)">{{ server }}</button>
+  </mat-menu>
 </nav>

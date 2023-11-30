@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
 
-  newEpisodes: 'http://192.168.1.88:3000/episode',
+  newEpisodes: 'https://ms-sato-anime.azurewebsites.net/episode',
   episodeLink: 'http://localhost:3000'
 }
 

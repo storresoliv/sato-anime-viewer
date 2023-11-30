@@ -1,37 +1,45 @@
-<h1 class="new-episodes-title">New episodes</h1>
+<mat-card class="new-episodes-last-episode">
+  <img
+    class="new-episodes-last-episode-image"
+    mat-card-image
+    [src]="latestEpisode.thumb_url"
+    alt="episode-image-preview"
+    referrerpolicy="no-referrer"
+  />
+</mat-card>
+
+<mat-card-title *ngIf="newEpisodes">Nuevos episodios</mat-card-title>
 
 <ul class="new-episodes-list" *ngIf="newEpisodes">
-  <li
-    class="episode"
+  <section
     *ngFor="let episode of newEpisodes"
     (mouseover)="onMouseOver(episode)"
-    (touchstart)="onTouchStart(episode)"
+    (click)="onTouchStart(episode)"
   >
-    <section [ngClass]="episode.selected ? 'episode-servers--selected' : 'episode-servers'">
-      <section class="episode-servers--list">
-        <ng-container *ngFor="let link of episode.links">
-          <app-servers [link]="link"></app-servers>
-        </ng-container>
-      </section>
-    </section>
-    <img
-      class="episode-image"
-      [src]="episode.thumb_url"
-      alt="episode-image-preview"
-      referrerpolicy="no-referrer"
-    />
-    <section class="episode-footer">
-      <p class="episode-subtitle" *ngIf="episode.selected">
-        {{ episode.title }}
-      </p>
-      <p class="episode-subtitle" *ngIf="!episode.selected">{{ ('E' + episode.episodeNumber) }} <br> {{ episode.createdAt | date:'longDate' }} </p>
-    </section>
-  </li>
+    <mat-card>
+      <img
+        class="episode-image"
+        mat-card-image
+        [src]="episode.thumb_url"
+        alt="episode-image-preview"
+        referrerpolicy="no-referrer"
+      />
+    </mat-card>
+
+    <div class="episode-info">
+      <mat-card-subtitle>episode {{ episode.episodeNumber }}</mat-card-subtitle>
+      <mat-card-title>{{ episode.title }}</mat-card-title>
+    </div>
+  </section>
 </ul>
 
 <!-- Skeleton -->
 <ul class="new-episodes-list" *ngIf="!newEpisodes">
-  <li class="episode" *ngFor="let episode of [1, 1, 1]">
-    <div class="episode-image skeleton"></div>
-  </li>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+
+  <!-- <li class="episode" *ngFor="let episode of [1, 1, 1]">
+    <mat-card>
+      <div class="episode-image skeleton"></div>
+    </mat-card>
+  </li> -->
 </ul>

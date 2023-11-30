@@ -3,18 +3,21 @@
   height: 100vh;
   display: block;
   position: relative;
+  overflow-y: hidden;
 
   .menu {
     display: none;
     position: fixed;
-    width: calc(100vw - calc(2 * var(--padding)));
+    // width: calc(100vw - calc(2 * var(--padding)));
+    align-content: center;
+    align-items: center;
+    width: 100%;
     justify-content: space-between;
     transform: translate(-50%, 0);
-    bottom: 0.5rem;
+    bottom: 0;
     left: 50%;
     background-color: var(--color-primary);
     padding: 1rem var(--padding);
-    border-radius: var(--border-radius);
     z-index: 1;
 
     &.active-link {

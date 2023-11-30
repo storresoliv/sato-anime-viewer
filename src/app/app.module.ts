@@ -6,6 +6,7 @@ import { AppComponent } from './app.component'
 import { RepositoriesModule } from './repositories/repositories.module'
 import { FavoriteModule, HomeModule, SettingsModule } from './views'
 import { PlayerModule } from './views/player/player.module';
+import { SharedModule } from './shared/shared.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { PlayerModule } from './views/player/player.module';
     BrowserModule,
     AppRoutingModule,
     RepositoriesModule,
+    SharedModule,
     HomeModule,
     FavoriteModule,
     SettingsModule,

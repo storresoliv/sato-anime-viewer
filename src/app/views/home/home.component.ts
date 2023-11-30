@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { ServerService } from 'src/app/shared/services/server.service'
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  public serverSelected = ''
+  constructor(private readonly serverService: ServerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.serverService.getServer().subscribe((serverSelected) => {
+      this.serverSelected = serverSelected
+    })
+  }
 }
