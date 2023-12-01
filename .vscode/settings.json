@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/31182802-dd09-420e-b9dd-311e211ef870/resourceGroups/sato-anime/providers/Microsoft.Web/sites/fe-sato-anime",
+    "appService.deploySubpath": "."
+}

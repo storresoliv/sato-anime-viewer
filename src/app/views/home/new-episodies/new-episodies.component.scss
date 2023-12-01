@@ -11,6 +11,7 @@
   --latest-image-height: auto;
   --image-min-width: 112px;
   --border-radius: 4px 4px 0 0;
+  --latest-episode-align-items: center;
 
   .skeleton {
     width: var(--image-width);
@@ -19,10 +20,10 @@
 
   .new-episodes {
     &-last-episode {
-      padding-top: var(--padding);
+      padding: var(--padding) 0 var(--padding);
       background-color: var(--color-background-dark-2);
       box-shadow: none;
-      align-items: center;
+      align-items: var(--latest-episode-align-items);
       display: flex;
 
       &-image {
@@ -39,7 +40,7 @@
     }
 
     &-list {
-      padding: 0 var(--padding) var(--padding) 0;
+      padding: var(--padding) var(--padding) var(--padding) 0;
       display: flex;
       gap: var(--padding);
       list-style: none;
@@ -126,5 +127,6 @@
     --latest-image-height: 333px;
     --image-width: 300px;
     --image-height: 200px;
+    --latest-episode-align-items: flex-start;
   }
 }
