@@ -66,56 +66,11 @@
         &-info {
           margin-top: 4px;
         }
-        
-        &-servers, &-servers--selected {
-          position: absolute;
-          background-color: var(--color-background-dark-2);
-          height: 100%;
-          width: 100%;
-          visibility: hidden;
-          border-radius: var(--border-radius);
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          z-index: 1;
-
-          &--selected {
-            visibility:visible
-          }
-
-          &--list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: row;
-            gap: 4px;
-            padding-top: var(--padding);
-          }
-
-          &--title {
-            font-size: 1.5rem;
-            font-weight: 400;
-            padding-top: var(--padding);
-            padding-bottom: var(--padding);
-            text-align: center;
-          }
-        }
 
         &-image {
           cursor: pointer;
           height: var(--image-height);
           width: var(--image-width);
-        }
-
-        &-footer {
-          background-color: var(--color-primary);
-          width: 100%;
-          bottom: 0;
-          padding: 8px;
-          min-height: 52px;
-        }
-
-        &-subtitle {
-          font-size: 0.7rem;
         }
       }
     }
